@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Country",
+        "id": "Country",
+        "width": 100,
+        "wikidataID": "Q6256"
+    },
+    {
+        "title": "Country ID",
+        "id": "Country ID",
+        "width": 100,
+        "wikidataID": "Q25275"
+    },
+    {
+        "title": "Year",
+        "id": "Year",
+        "width": 100,
+        "wikidataID": "Q577"
+    },
+    {
+        "title": "PPP",
+        "id": "PPP",
+        "width": 100,
+        "wikidataID": "Q82135"
+    }
+]
