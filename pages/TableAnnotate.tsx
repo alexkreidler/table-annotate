@@ -9,7 +9,7 @@ import DataEditor, {
 import { AsyncSelect, chakraComponents } from "chakra-react-select";
 import { Heading, Stack, Text, VStack } from "@chakra-ui/react";
 import { Box } from "@chakra-ui/react";
-import { wdQuery } from "./wdQuery";
+import { betterQuery, wdQuery } from "./wdQuery";
 import {debounce} from "lodash"
 
 const exampleURL =
@@ -100,7 +100,7 @@ export default () => {
               loadOptions={debounce((input, cb) => {
                 wdQuery(input).then((res) => {
                   console.log(res);
-                  const options = res?.search.map((s) => ({
+                  const options = res?.map((s) => ({
                     option: s.id,
                     label: s.label,
                     description: s.description,
@@ -108,7 +108,7 @@ export default () => {
                   console.log(options);
                   cb(options);
                 });
-              }, 400)}
+              }, 50)}
             //   Lol immutable updates immer would be easier
               onChange={(newVal: any) => {
                 setColumns((c) => {
