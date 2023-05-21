@@ -1,9 +1,11 @@
 import "../styles/globals.css";
-import type { AppProps } from "next/app";
 import "@glideapps/glide-data-grid/dist/index.css";
 
+import type { AppProps } from "next/app";
 import { ChakraProvider } from '@chakra-ui/react'
-function CSSstring(string) {
+import { theme } from "../components/theme";
+
+function CSSstring(string: string) {
   const css_json = `{"${string
     .replace(/; /g, '", "')
     .replace(/: /g, '": "')
@@ -20,7 +22,7 @@ function CSSstring(string) {
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <Component {...pageProps} />
       <div
         id="portal"
